@@ -10,5 +10,6 @@ public class Main {
         uzsakymas.PridetiAutomobili(mercedes);
 
         uzsakymas.SkaiciuotiKaina(new KainosPolitikaPaprasta());
+        uzsakymas.SkaiciuotiKaina(new KainosPolitikaSudetinga());
     }
 }
