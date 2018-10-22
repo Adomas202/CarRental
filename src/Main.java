@@ -1,6 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
+        float uzsakymoKaina = 0;
         NuomosUzsakymas uzsakymas = new NuomosUzsakymas();
 
         Automobilis bmw320i = new Automobilis(3000, 1999, 68);
@@ -9,7 +10,12 @@ public class Main {
         uzsakymas.PridetiAutomobili(bmw320i);
         uzsakymas.PridetiAutomobili(mercedes);
 
-        uzsakymas.SkaiciuotiKaina(new KainosPolitikaPaprasta());
-        uzsakymas.SkaiciuotiKaina(new KainosPolitikaSudetinga());
+        uzsakymoKaina += uzsakymas.SkaiciuotiUzsakymoKaina(new KainosPolitikaPaprasta());
+        uzsakymoKaina += uzsakymas.SkaiciuotiUzsakymoKaina(new KainosPolitikaSudetinga());
+
+        uzsakymoKaina += uzsakymas.SkaiciuotiDraudimoKaina(new DraudimasZalias());
+        uzsakymoKaina += uzsakymas.SkaiciuotiDraudimoKaina(new DraudimasRaudonas());
+
+        System.out.println(uzsakymoKaina);
     }
 }
